@@ -84,7 +84,7 @@ export const ContactSection = () => {
         },
         {
             icon: <Instagram size={22} />,
-            href: "https://instagram.com/doncrts",
+            href: "https://instagram.com/doncrtss",
             label: "Instagram"
         },
         {
