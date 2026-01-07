@@ -145,9 +145,10 @@ body {
   text-shadow: 0 0 10px rgba(255, 180, 50, 0.7);
 }
 
+
 .navbar-title {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 
@@ -159,17 +160,18 @@ body {
 
 @media (min-width: 768px) {
   .navbar-title {
-    font-size: 18px;
+    font-size: 28px;
   }
   .navbar-subtitle {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
+
 .nav-link {
   color: var(--foreground);
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 20px;
   letter-spacing: -0.01em;
   transition: color 0.3s;
 }
@@ -262,11 +264,12 @@ body {
   }
 }
 
+
 .mobile-nav-link {
   padding: 0.75rem 1rem;
   color: var(--foreground);
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 22px;
   letter-spacing: -0.01em;
   border-radius: 0.5rem;
   transition: background-color 0.3s;
@@ -509,6 +512,11 @@ body {
     font-size: 4rem;
   }
 }
+    text-align: justify;
+    text-justify: inter-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    text-align-last: left;
 
 .hero-description {
   font-size: 1.125rem;
@@ -623,6 +631,11 @@ body {
   font-size: 1rem;
   line-height: 1.8;
   opacity: 0.7;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  /* Keep final short line left-aligned for better visual balance */
+  text-align-last: left;
 }
 
 .about-features {
@@ -666,6 +679,10 @@ body {
   line-height: 1.7;
   opacity: 0.7;
   padding-left: 2rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  text-align-last: left;
 }
 
 .skill-highlight {

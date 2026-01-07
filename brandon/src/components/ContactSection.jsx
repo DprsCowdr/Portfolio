@@ -54,14 +54,14 @@ export const ContactSection = () => {
         {
             icon: <Mail size={20} />,
             label: "Email",
-            value: "brandoncaritos@gmail.com",
-            href: "mailto:brandoncaritos@gmail.com"
+            value: "doncaritos@gmail.com",
+            href: "mailto:doncaritos@gmail.com"
         },
         {
             icon: <Phone size={20} />,
             label: "Phone",
-            value: "+63 912 345 6789",
-            href: "tel:+639123456789"
+            value: "+63 915 054 0702",
+            href: "tel:+639150540702"
         },
         {
             icon: <MapPin size={20} />,

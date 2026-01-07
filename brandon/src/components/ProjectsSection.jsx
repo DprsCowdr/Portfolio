@@ -60,9 +60,11 @@ export const ProjectsSection = () => {
                                     className="project-image"
                                 />
                                 <div className="project-overlay">
-                                    <a href={project.liveLink} className="project-link" title="Live Demo">
-                                        <ExternalLink size={20} />
-                                    </a>
+                                    {project.title === "Perfect Smile Dental Clinic Management System" && project.liveLink && project.liveLink !== "#" && (
+                                        <a href={project.liveLink} className="project-link" title="Live Demo">
+                                            <ExternalLink size={20} />
+                                        </a>
+                                    )}
                                     <a href={project.githubLink} className="project-link" title="Source Code">
                                         <Github size={20} />
                                     </a>

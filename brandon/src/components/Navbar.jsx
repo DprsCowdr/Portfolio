@@ -60,8 +60,8 @@ export const Navbar = () => {
       <div className="navbar-container">
        <a className="flex items-center">
         <span className="relative z-10"> 
-          <span className="text-glow navbar-title">Brandon Caritos</span>
-          <span className="navbar-subtitle"> Portfolio</span>
+
+          <span className="navbar-subtitle"> My Portfolio</span>
         </span>
        </a>
         {/* Desktop nav links */}

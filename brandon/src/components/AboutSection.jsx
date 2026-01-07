@@ -2,10 +2,7 @@ import { Check } from 'lucide-react';
 
 export const AboutSection = () => {
     const aboutItems = [
-        {
-            title: "Education",
-            description: "Currently pursuing a degree in Information Technology, at Camarines Sur Polytechnic Colleges."
-        },
+       
         {
             title: "Technical Skills",
             description: (
@@ -13,18 +10,22 @@ export const AboutSection = () => {
                     Has Knowledgeable Skills in  <span className="skill-highlight">HTML</span>, <span className="skill-highlight">CSS</span>, <span className="skill-highlight">PHP</span>, <span className="skill-highlight">C++</span>. Always eager to learn new frameworks and tools.
                 </>
             )
+        }, {
+            title: "Soft Skills",
+            description: "Excellent communication, teamwork, and time management skills. Adaptable and quick learner."
         },
+        
         {
             title: "Characteristics",
             description: "Strong Willingness to Contribute and Solve complex problems into manageable solutions."
         },
-        {
-            title: "Soft Skills",
-            description: "Excellent communication, teamwork, and time management skills. Adaptable and quick learner."
-        },
+       ,
         {
             title: "Hobbies",
             description: "Business,Thrifting ,  watching Documentaries, and staying updated with industry trends."
+        }, {
+            title: "Education",
+            description: "Currently pursuing a degree in Information Technology, at Camarines Sur Polytechnic Colleges."
         },
         {
             title: "Goals",
