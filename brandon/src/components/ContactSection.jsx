@@ -100,7 +100,7 @@ export const ContactSection = () => {
                 <div className="contact-header">
                     <p className="contact-subtitle">Get In Touch</p>
                     <h2 className="contact-title">
-                        <span className="text-glow">Contact Me</span>
+                        <span className="text-glow">Contact Me!</span>
                     </h2>
                     <p className="contact-intro">
                         Have a project in mind or want to collaborate? Feel free to reach out!
