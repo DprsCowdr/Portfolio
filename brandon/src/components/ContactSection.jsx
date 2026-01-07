@@ -74,17 +74,17 @@ export const ContactSection = () => {
     const socialLinks = [
         {
             icon: <Linkedin size={22} />,
-            href: "https://linkedin.com/in/your-profile",
+            href: "https://www.linkedin.com/in/brandon-caritos-824023372/",
             label: "LinkedIn"
         },
         {
             icon: <Facebook size={22} />,
-            href: "https://facebook.com/your-profile",
+            href: "https://facebook.com/doncrts",
             label: "Facebook"
         },
         {
             icon: <Instagram size={22} />,
-            href: "https://instagram.com/your-profile",
+            href: "https://instagram.com/doncrts",
             label: "Instagram"
         },
         {
