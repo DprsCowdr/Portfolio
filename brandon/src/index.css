@@ -432,18 +432,51 @@ body {
 .hero-btn {
   display: inline-block;
   margin-top: 1.5rem;
-  padding: 1rem 2.5rem;
-  border: 2px solid var(--foreground);
+  padding: 0.65rem 1.6rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
   color: var(--foreground);
-  font-weight: 500;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  transition: all 0.3s;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
 }
 
 .hero-btn:hover {
-  background-color: var(--foreground);
-  color: var(--background);
+  transform: translateY(-2px);
+}
+
+/* Primary (filled) */
+.hero-btn-primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  border-color: transparent;
+}
+.hero-btn-primary:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+
+/* Secondary (outline) */
+.hero-btn-secondary {
+  background: transparent;
+  color: var(--foreground);
+  border-color: var(--border);
+}
+.hero-btn-secondary:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+/* Make sure buttons align well on small screens */
+@media (max-width: 640px) {
+  .hero-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  .hero-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .hero-image-container {
@@ -503,6 +536,13 @@ body {
   animation: bounce 2s ease-in-out infinite;
   opacity: 0.7;
   z-index: 10;
+}
+
+/* Hide scroll indicator on small screens (mobile) */
+@media (max-width: 767px) {
+  .scroll-indicator {
+    display: none;
+  }
 }
 
 .scroll-indicator span {
