@@ -196,7 +196,7 @@ export const ContactSection = () => {
                                 onChange={handleChange}
                                 required
                                 className="form-input"
-                                placeholder="Project Inquiry"
+                                placeholder="Subject Inquiry"
                             />
                         </div>
                         
@@ -210,7 +210,7 @@ export const ContactSection = () => {
                                 required
                                 rows={5}
                                 className="form-input form-textarea"
-                                placeholder="Tell me about your project..."
+                                placeholder="Feel Free To Message Me..."
                             />
                         </div>
 
