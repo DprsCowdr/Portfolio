@@ -21,7 +21,7 @@ export const HeroSection = () => {
                         <h1 className="hero-title">
                             <span className="text-glow">Brandon Caritos</span>
                         </h1>
-                        <p className="hero-role">Aspiring Web Developer</p>
+                        <p className="hero-role">Aspiring IT Professional / Developer</p>
                         <div className="flex gap-4 mt-6 items-center">
                             <a href="#contact" className="hero-btn hero-btn-secondary" aria-label="Contact me">Contact Me</a>
                             <button onClick={() => setIsModalOpen(true)} className="hero-btn hero-btn-primary" aria-label="View resume">

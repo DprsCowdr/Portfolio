@@ -7,7 +7,7 @@ export const AboutSection = () => {
             title: "Technical Skills",
             description: (
                 <>
-                    Has Knowledgeable Skills in  <span className="skill-highlight">HTML</span>, <span className="skill-highlight">CSS</span>, <span className="skill-highlight">PHP</span>, <span className="skill-highlight">C++</span>. Always eager to learn new frameworks and tools.
+                    Has Knowledgeable Skills in <span className="skill-highlight">HTML</span>, <span className="skill-highlight">CSS</span>, <span className="skill-highlight">PHP</span>, <span className="skill-highlight">C++</span>. Minor experience with <span className="skill-highlight">Arduino</span> and <span className="skill-highlight">networking basics</span>. Always eager to learn new frameworks and tools.
                 </>
             )
         }, {
