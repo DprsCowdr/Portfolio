@@ -1,18 +1,18 @@
 export const AboutSection = () => {
     const technicalSkills = [
-        "E-commerce operations & platform management",
-        "Pre-sales demos & proof-of-concept builds",
-        "Web development (React, Node.js, PHP)",
-        "Integration scripting and connectors",
-        "Testing, QA and UAT support"
+        "E-commerce",
+        "Pre-sales demos & PoCs",
+        "React",
+        "Node.js",
+        "PHP"
     ];
 
-    const professionalSkills = [
-        "Client-facing communication & demos",
-        "Requirements capture and scoping",
-        "Cross-team coordination (sales, engineering, ops)",
-        "Prioritization and pragmatic decision-making",
-        "Technical documentation and handoffs"
+    const softSkills = [
+        "Client demos & communication",
+        "Requirements capture",
+        "Cross-team coordination",
+        "Prioritization",
+        "Documentation & handoffs"
     ];
 
     return (
@@ -41,8 +41,8 @@ export const AboutSection = () => {
                             </div>
 
                             <div className="skills-column">
-                                <h4 className="skills-column-title">Delivery & professional skills</h4>
-                                {professionalSkills.map((s, i) => (
+                                <h4 className="skills-column-title">Soft skills</h4>
+                                {softSkills.map((s, i) => (
                                     <div key={s} className="about-focus-item">
                                         <span aria-hidden="true">{i + 1}.</span>
                                         <span className="focus-text">{s}</span>
