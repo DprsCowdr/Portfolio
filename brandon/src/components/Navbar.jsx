@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { cn } from '../lib/utils';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', href: '#hero' },
   { name: 'About', href: '#about' },
+  { name: 'Journey', href: '#experience' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -31,10 +31,10 @@ export const Navbar = () => {
       setIsDarkMode(false);
       document.documentElement.classList.remove("dark");
     } else {
-      // Default to dark mode
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
+      // The paper-inspired palette is the primary portfolio experience.
+      setIsDarkMode(false);
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   }, []);
 
@@ -51,18 +51,11 @@ export const Navbar = () => {
   };
 
   return (
-    <nav
-      className={cn(
-        'fixed w-full z-40 transition-all duration-300',
-        isScrolled ? 'py-2 bg-background/80 backdrop-blur-md shadow-xs' : 'py-4'
-      )}
-    >
+    <nav className={`site-nav ${isScrolled ? 'site-nav-scrolled' : ''}`}>
       <div className="navbar-container">
-       <a className="flex items-center">
-        <span className="relative z-10"> 
-
-          <span className="navbar-subtitle"> My Portfolio</span>
-        </span>
+       <a className="navbar-brand" href="#hero" aria-label="Go to top">
+        <span className="brand-mark" aria-hidden="true">B</span>
+        <span className="navbar-subtitle"> My Portfolio</span>
        </a>
         {/* Desktop nav links */}
         <div className="navbar-links">
@@ -71,18 +64,18 @@ export const Navbar = () => {
               {item.name}
             </a>
           ))}
-          <button onClick={toggleTheme} className="theme-toggle">
-            {isDarkMode ? <Sun className="h-5 w-5" color="#FCD34D" /> : <Moon className="h-5 w-5" color="#93C5FD" />}
+          <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
+            {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </button>
         </div>
         {/* Mobile menu button */}
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="mobile-menu-btn">
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="mobile-menu-btn" aria-label="Toggle menu">
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
       
       {/* Mobile menu */}
-      <div className={cn('mobile-menu', isMenuOpen ? 'mobile-menu-open' : '')}>
+      <div className={`mobile-menu ${isMenuOpen ? 'mobile-menu-open' : ''}`}>
         {navItems.map((item) => (
           <a 
             key={item.name} 
@@ -93,8 +86,8 @@ export const Navbar = () => {
             {item.name}
           </a>
         ))}
-        <button onClick={toggleTheme} className="mobile-theme-btn">
-          {isDarkMode ? <Sun className="h-5 w-5" color="#FCD34D" /> : <Moon className="h-5 w-5" color="#93C5FD" />}
+        <button onClick={toggleTheme} className="mobile-theme-btn" aria-label="Toggle theme">
+          {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
         </button>
       </div>
     </nav>

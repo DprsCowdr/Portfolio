@@ -1,64 +1,40 @@
-import { Check } from 'lucide-react';
-
 export const AboutSection = () => {
-    const aboutItems = [
-       
-        {
-            title: "Technical Skills",
-            description: (
-                <>
-                    Has Knowledgeable Skills in <span className="skill-highlight">HTML</span>, <span className="skill-highlight">CSS</span>, <span className="skill-highlight">PHP</span>, <span className="skill-highlight">C++</span>. And also have Basic <span className="skill-highlight">Arduino</span> and <span className="skill-highlight">networking</span>. Always eager to learn new frameworks and tools.
-                </>
-            )
-        }, {
-            title: "Soft Skills",
-            description: "Excellent Communicator, teamwork readiness, and has time management skills. Adaptable and quick learner."
-        },
-        
-        {
-            title: "Characteristics",
-            description: "Strong Willingness to Contribute and Solve complex problems into manageable solutions."
-        },
-       ,
-        {
-            title: "Hobbies",
-            description: "Business,Thrifting ,  watching Documentaries, and staying updated with industry trends."
-        }, {
-            title: "Education",
-            description: "Currently pursuing a degree in Information Technology, at Camarines Sur Polytechnic Colleges."
-        },
-        {
-            title: "Goals",
-            description: "To become a Successful IT Professional and contribute to meaningful projects that make a positive impact."
-        }
+    const focusAreas = [
+        "Technical sales support",
+        "System testing & QA",
+        "Web development",
+        "Hardware troubleshooting",
+        "Project documentation",
+        "Networking basics"
     ];
 
     return (
         <section id="about" className="about-section">
             <div className="about-container">
                 <div className="about-grid">
-                    {/* Left Side - Title & Description */}
                     <div className="about-intro-block">
                         <p className="about-subtitle">Get to know me</p>
                         <h2 className="about-main-title">
                             <span className="text-glow">About Me</span>
                         </h2>
                         <p className="about-intro-text">
-               Hi! I’m Brandon Caritos, an aspiring IT intern with a strong eagerness to learn and explore new technologies. I am motivated to step outside my comfort zone to continuously develop my skills and grow both personally and professionally.
+                            I’m an aspiring IT professional with hands-on experience in technical sales support, system testing, technical documentation, and web development. I enjoy turning real requirements into organized, dependable solutions.
+                        </p>
+                        <p className="about-intro-text about-intro-text-secondary">
+                            My work combines the practical side of IT - supporting hardware, reviewing systems, and coordinating information - with a growing interest in building thoughtful web experiences. I bring the ownership of an e-commerce operator and the curiosity of a lifelong learner to every project.
                         </p>
                     </div>
 
-                    {/* Right Side - Features Grid */}
-                    <div className="about-features">
-                        {aboutItems.map((item, index) => (
-                            <div key={index} className="about-feature-item">
-                                <div className="about-feature-header">
-                                    <Check className="about-check-icon" size={20} />
-                                    <h3 className="about-feature-title">{item.title}</h3>
-                                </div>
-                                <p className="about-feature-text">{item.description}</p>
-                            </div>
-                        ))}
+                    <div className="about-focus-card">
+                        <p className="about-focus-label">What I Bring</p>
+                        <h3 className="about-focus-title">Practical support with a builder's mindset.</h3>
+                        <div className="about-focus-list">
+                            {focusAreas.map((area, index) => (
+                                <span key={area} className="about-focus-item">
+                                    <span aria-hidden="true">0{index + 1}</span>{area}
+                                </span>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

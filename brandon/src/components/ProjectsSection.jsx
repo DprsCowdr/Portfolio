@@ -8,7 +8,7 @@ export const ProjectsSection = () => {
         {
             title: "Perfect Smile Dental Clinic Management System",
             role: "Programmer | Capstone Project",
-            date: "Feb. 2024",
+            date: "Feb. 2025 - Jan. 2026",
             description: "A web-based clinic management system for handling appointments, patient records, and services. Features include appointment booking, queue management, automated SMS/email notifications, and an interactive 3D dental chart with role-based access control.",
             image: perfectSmileImg,
             techStack: ["PHP", "CodeIgniter 4", "MySQL", "Tailwind", "JavaScript"],
