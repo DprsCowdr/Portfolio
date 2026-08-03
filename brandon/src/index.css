@@ -724,7 +724,7 @@ a { color: inherit; text-decoration: none; }
 
 .about-focus-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center; /* center numbers and text vertically */
   gap: 0.75rem;
   padding: 0.6rem 0;
   border-bottom: 1px dashed color-mix(in srgb, var(--navy) 12%, transparent);
@@ -736,11 +736,29 @@ a { color: inherit; text-decoration: none; }
   font-weight: 700;
 }
 
-.about-focus-item span {
-  color: #d9b46a;
+/* Number column styling (override generic span rule) */
+.about-focus-item .focus-num {
+  color: var(--primary);
   font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
-  margin-top: 0.22rem;
+  font-size: 0.78rem;
+  margin-top: 0;
+  align-self: center;
+}
+
+/* Main text of each skill */
+.about-focus-item .focus-text {
+  color: #000;
+  font-family: 'Inter', var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Remove older generic span rule effect by resetting other spans to inherit */
+.about-focus-item span:not(.focus-num) {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  margin-top: 0;
 }
 
 .about-features {
