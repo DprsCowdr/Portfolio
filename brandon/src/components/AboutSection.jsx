@@ -27,7 +27,7 @@ export const AboutSection = () => {
 
                     <div className="about-focus-card">
                         <h3 className="about-focus-title">Technical sales & delivery</h3>
-                        <p className="about-focus-lead">I support sales by removing technical uncertainty early: building demos and quick prototypes, validating customer environments, running feasibility checks, and delivering clear technical scopes and handoff documentation. I pair client-facing pre-sales delivery with hands-on technical work so proposed solutions are both sale-ready and implementable.</p>
+                        <p className="about-focus-lead">I make sales wins easier. I build quick demos, stitch simple integrations, test customer setups, and write clear tech notes so proposals actually ship. Hands-on with troubleshooting and light scripting — learning React, Node, PHP, and MySQL — I keep things practical and demo-ready.</p>
 
                         <div className="about-focus-list skills-grid">
                             <div className="skills-column">
