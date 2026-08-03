@@ -27,7 +27,7 @@ export const AboutSection = () => {
 
                     <div className="about-focus-card">
                         <h3 className="about-focus-title">Technical sales & delivery</h3>
-                        <p className="about-focus-lead">I make sales wins easier. I build quick demos, stitch simple integrations, test customer setups, and write clear tech notes so proposals actually ship. Hands-on with troubleshooting and light scripting — learning React, Node, PHP, and MySQL — I keep things practical and demo-ready.</p>
+                        <p className="about-focus-lead">I make sales wins easier. I build quick demos, stitch simple integrations, test customer setups, and write clear tech notes so proposals actually ship. Hands-on with troubleshooting and light scripting.</p>
 
                         <div className="about-focus-list skills-grid">
                             <div className="skills-column">
