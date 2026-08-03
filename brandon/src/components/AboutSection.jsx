@@ -27,28 +27,32 @@ export const AboutSection = () => {
 
                     <div className="about-focus-card">
                         <h3 className="about-focus-title">Technical sales & delivery</h3>
-                        <p className="about-focus-lead">I make sales wins easier. I build quick demos, stitch simple integrations, test customer setups, and write clear tech notes so proposals actually ship. Hands-on with troubleshooting and light scripting.</p>
+                        <p className="about-lead">I'm an aspiring IT professional with a passion for technology, continuous learning, and building meaningful connections. I enjoy solving technical problems, creating simple solutions, and helping customers succeed by making complex ideas easy to understand while constantly growing both my technical and communication skills.</p>
+<br></br>
 
-                        <div className="about-focus-list skills-grid">
-                            <div className="skills-column">
+
+                        <div className="about-focus-list skills-grid aligned-grid">
+                            <div className="skills-column-header">
                                 <h4 className="skills-column-title">Technical skills</h4>
-                                {technicalSkills.map((s, i) => (
-                                    <div key={s} className="about-focus-item">
-                                        <span aria-hidden="true" className="focus-num">{String(i + 1).padStart(2,'0')}</span>
-                                        <span className="focus-text">{s}</span>
-                                    </div>
-                                ))}
+                            </div>
+                            <div className="skills-column-header">
+                                <h4 className="skills-column-title">Soft skills</h4>
                             </div>
 
-                            <div className="skills-column">
-                                <h4 className="skills-column-title">Soft skills</h4>
-                                {softSkills.map((s, i) => (
-                                    <div key={s} className="about-focus-item">
+                            {technicalSkills.map((tech, i) => (
+                                // render row: left = tech, right = softSkills[i]
+                                <React.Fragment key={i}>
+                                    <div className="about-focus-item">
                                         <span aria-hidden="true" className="focus-num">{String(i + 1).padStart(2,'0')}</span>
-                                        <span className="focus-text">{s}</span>
+                                        <span className="focus-text">{tech}</span>
                                     </div>
-                                ))}
-                            </div>
+
+                                    <div className="about-focus-item">
+                                        <span aria-hidden="true" className="focus-num">{String(i + 1).padStart(2,'0')}</span>
+                                        <span className="focus-text">{softSkills[i]}</span>
+                                    </div>
+                                </React.Fragment>
+                            ))}
                         </div>
                     </div>
                 </div>
