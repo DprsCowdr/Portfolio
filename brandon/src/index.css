@@ -24,17 +24,6 @@
   --shadow: 0 24px 60px rgba(53, 39, 23, 0.12);
 }
 
-html.dark {
-  --background: #12110f;
-  --foreground: #f6efe3;
-  --card: rgba(25, 23, 20, 0.82);
-  --border: rgba(242, 225, 199, 0.12);
-  --primary: #d4a24c;
-  --primary-foreground: #191713;
-  --muted: #b8aa99;
-  --navy: #c9d4dd;
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
-}
 
 * { border-color: var(--border); box-sizing: border-box; }
 
@@ -159,24 +148,6 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 10px 26px rgba(43, 32, 19, 0.1);
 }
 
-html.dark .site-nav {
-  background: rgba(239, 233, 221, 0.9);
-  border-color: rgba(239, 233, 221, 0.42);
-}
-
-html.dark .site-nav .navbar-subtitle,
-html.dark .site-nav .nav-link,
-html.dark .site-nav .theme-toggle,
-html.dark .site-nav .mobile-menu-btn,
-html.dark .site-nav .mobile-nav-link,
-html.dark .site-nav .mobile-theme-btn {
-  color: #1e2d3d;
-}
-
-html.dark .site-nav .brand-mark {
-  color: #7b1e24;
-  border-color: #7b1e24;
-}
 
 .navbar-container {
   min-height: 4.25rem;
@@ -261,26 +232,24 @@ html.dark .site-nav .brand-mark {
 .nav-link:hover::after { transform: scaleX(1); }
 
 .theme-toggle,
-.mobile-theme-btn,
+.mobile-theme-btn { display: none; }
+
 .mobile-menu-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--card) 92%, transparent);
+  background: transparent;
   color: var(--foreground);
   border-radius: 0;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.theme-toggle:hover,
-.mobile-theme-btn:hover,
 .mobile-menu-btn:hover {
   transform: translateY(-1px);
   border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
 }
 
-.theme-toggle { width: 2.1rem; height: 2.1rem; }
 .mobile-menu-btn { padding: 0.55rem; }
 
 .mobile-menu {
@@ -499,6 +468,15 @@ html.dark .site-nav .brand-mark {
   color: var(--muted);
 }
 
+.hero-learnmore {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: 'DM Mono', monospace;
+  color: var(--muted);
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -517,30 +495,36 @@ html.dark .site-nav .brand-mark {
   justify-content: center;
   min-width: 10.75rem;
   padding: 1rem 1.25rem;
-  border-radius: 0;
-  border: 1px solid currentColor;
+  border-radius: 9999px;
+  border: 1px solid var(--primary);
   font-family: 'DM Mono', monospace;
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  background: transparent;
+  color: var(--primary);
 }
 
 .hero-btn:hover { transform: translateY(-3px); }
 .hero-btn-primary {
+  background: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: none;
+}
+.hero-btn-primary:hover {
   background: var(--primary);
   color: var(--primary-foreground);
-  box-shadow: 5px 5px 0 color-mix(in srgb, var(--navy) 55%, transparent);
 }
-.hero-btn-primary:hover { box-shadow: 2px 2px 0 color-mix(in srgb, var(--navy) 55%, transparent); }
 .hero-btn-secondary {
   background: transparent;
-  border-color: var(--navy);
+  border-color: color-mix(in srgb, var(--navy) 55%, transparent);
   color: var(--foreground);
 }
 
-.hero-btn-secondary:hover { background: var(--navy); color: var(--primary-foreground); }
+.hero-btn-secondary:hover { background: color-mix(in srgb, var(--navy) 55%, transparent); color: var(--primary-foreground); }
 
 .resume-backdrop {
   position: fixed;
@@ -658,11 +642,11 @@ html.dark .site-nav .brand-mark {
 .about-intro-block,
 .contact-info {
   padding: 1.6rem;
-  border: 1px solid var(--border);
-  border-radius: 1.5rem;
-  background: color-mix(in srgb, var(--card) 92%, transparent);
-  backdrop-filter: blur(18px);
-  box-shadow: var(--shadow);
+  border: 0;
+  border-radius: 0.6rem;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
 }
 
 .about-intro-text,
@@ -685,10 +669,10 @@ html.dark .site-nav .brand-mark {
 
 .about-focus-card {
   padding: clamp(1.5rem, 4vw, 2.5rem);
-  border-top: 3px solid var(--primary);
-  background: var(--navy);
-  color: #f8f1e4;
-  box-shadow: var(--shadow);
+  border-top: 3px solid color-mix(in srgb, var(--primary) 45%, transparent);
+  background: transparent;
+  color: var(--foreground);
+  box-shadow: none;
 }
 
 .about-focus-card .about-focus-label { color: #d9b46a; }
@@ -703,22 +687,38 @@ html.dark .site-nav .brand-mark {
 
 .about-focus-list {
   display: grid;
-  border-top: 1px solid rgba(248, 241, 228, 0.25);
+  gap: 0.8rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 1023px) {
+  .skills-grid { grid-template-columns: 1fr; }
 }
 
 .about-focus-item {
-  display: grid;
-  grid-template-columns: 2.25rem 1fr;
-  gap: 0.5rem;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid rgba(248, 241, 228, 0.25);
-  font-size: 0.92rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed color-mix(in srgb, var(--navy) 12%, transparent);
+  font-size: 0.95rem;
+}
+
+.skills-column-title {
+  margin: 0 0 0.6rem 0;
+  font-weight: 700;
 }
 
 .about-focus-item span {
   color: #d9b46a;
   font-family: 'DM Mono', monospace;
   font-size: 0.68rem;
+  margin-top: 0.22rem;
 }
 
 .about-features {
@@ -870,16 +870,17 @@ html.dark .site-nav .brand-mark {
   stroke: color-mix(in srgb, var(--navy) 88%, transparent);
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 105;
+  stroke-width: 80; /* slightly thinner for a more elegant road */
 }
 
 .career-road-dash {
   fill: none;
   stroke: #f5eee1;
-  stroke-dasharray: 13 15;
-  stroke-linecap: butt;
+  stroke-dasharray: 12 12;
+  stroke-linecap: round;
   stroke-width: 3.5;
 }
+
 
 .career-steps {
   position: absolute;
@@ -891,33 +892,36 @@ html.dark .site-nav .brand-mark {
 
 .career-step {
   position: absolute;
-  width: min(21%, 14rem);
+  width: 0;
+  height: 0;
 }
 
 .career-step-card {
-  position: relative;
-  z-index: 2;
-  padding: 1rem 1.05rem 1.1rem;
-  border: 1px solid color-mix(in srgb, var(--navy) 28%, var(--border));
-  background: color-mix(in srgb, var(--background) 84%, transparent);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 20px rgba(53, 39, 23, 0.08);
+  position: absolute;
+  left: -7rem;
+  width: 14rem;
+  padding: 1.25rem 1.25rem 1.4rem;
+  border: 1px solid color-mix(in srgb, var(--navy) 15%, var(--border));
+  background: rgba(250, 247, 240, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(53, 39, 23, 0.05);
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.career-step-date,
-.career-step-label {
-  margin: 0;
+.career-step-date {
+  margin: 0 0 0.8rem 0;
   font-family: 'DM Mono', monospace;
   font-size: 0.64rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: var(--primary);
 }
 
-.career-step-date { color: var(--primary); }
-
 .career-step-card h3 {
-  margin: 0.45rem 0 0;
+  margin: 0;
   font-family: var(--font-serif);
   font-size: clamp(1rem, 1.6vw, 1.35rem);
   line-height: 1.15;
@@ -926,14 +930,19 @@ html.dark .site-nav .brand-mark {
 .career-step-label {
   display: flex;
   gap: 0.45rem;
-  margin-top: 0.45rem;
+  margin: 0.35rem 0 1rem 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--muted);
 }
 
 .career-step-label span { color: var(--primary); }
 
 .career-step-description {
-  margin: 0.7rem 0 0;
+  margin: 0;
   color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.55;
@@ -942,15 +951,17 @@ html.dark .site-nav .brand-mark {
 .career-step-line {
   position: absolute;
   z-index: 1;
-  left: 50%;
+  left: 0;
   width: 1px;
   background: color-mix(in srgb, var(--primary) 58%, var(--border));
 }
 
 .career-step-pin {
   position: absolute;
-  z-index: 2;
-  left: calc(50% - 1.85rem);
+  z-index: 5;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
   width: 3.7rem;
@@ -960,61 +971,91 @@ html.dark .site-nav .brand-mark {
   background: var(--primary);
   color: var(--primary-foreground);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary) 60%, var(--border));
+  transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
-.step-reshall { left: 2.2%; top: 3%; }
-.step-reshall .career-step-line { top: 100%; height: 30rem; }
-.step-reshall .career-step-pin { top: calc(100% + 30rem); }
+.career-step-pin:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: var(--navy);
+}
 
-.step-degree { left: 20%; top: 22%; }
-.step-degree .career-step-line { top: 100%; height: 3rem; }
-.step-degree .career-step-pin { top: calc(100% + 3rem); }
+.step-reshall { left: 8.0%; top: 20%; }
+.step-reshall .career-step-card { top: 5.5rem; left: -2rem; }
+.step-reshall .career-step-line { top: 0; height: 5.5rem; }
 
-.step-capstone { left: 39%; top: 4%; }
-.step-capstone .career-step-line { top: 100%; height: 15rem; }
-.step-capstone .career-step-pin { top: calc(100% + 15rem); }
+.step-degree { left: 22.667%; top: 43.881%; }
+.step-degree .career-step-card { top: 5.5rem; }
+.step-degree .career-step-line { top: 0; height: 5.5rem; }
 
-.step-packetworx { left: 55.5%; top: 81%; }
-.step-packetworx .career-step-line { top: -4.25rem; height: 4.25rem; }
-.step-packetworx .career-step-pin { top: -6.1rem; }
+.step-capstone { left: 45.333%; top: 67.055%; }
+.step-capstone .career-step-card { bottom: 5.5rem; }
+.step-capstone .career-step-line { bottom: 0; height: 5.5rem; }
+.step-packetworx { left: 62.0%; top: 67.6%; }
+.step-packetworx .career-step-card { top: 5.5rem; }
+.step-packetworx .career-step-line { top: 0; height: 5.5rem; }
 
-.step-certificate { left: 72%; top: 3%; }
-.step-certificate .career-step-line { top: 100%; height: 4rem; }
-.step-certificate .career-step-pin { top: calc(100% + 4rem); }
+.step-certificate { left: 80.0%; top: 40.1%; }
+.step-certificate .career-step-card { bottom: 5.5rem; }
+.step-certificate .career-step-line { bottom: 0; height: 5.5rem; }
 
-.step-next { right: 1.8%; top: 42%; }
-.step-next .career-step-line { top: -6rem; height: 6rem; }
-.step-next .career-step-pin { top: -8.3rem; }
-.step-next .career-step-card { border-color: var(--primary); background: var(--primary); color: var(--primary-foreground); }
+.step-next { left: 95.0%; top: 41.4%; }
+.step-next .career-step-card { top: 5.5rem; left: auto; right: -2rem; border-color: var(--primary); background: rgba(123, 30, 36, 0.15); color: var(--foreground); }
+.step-next .career-step-line { top: 0; height: 5.5rem; }
 .step-next .career-step-date,
 .step-next .career-step-label,
 .step-next .career-step-label span,
-.step-next .career-step-description { color: color-mix(in srgb, var(--primary-foreground) 78%, transparent); }
+.step-next .career-step-description { color: inherit; }
+
+.step-reshall .career-step-card:hover,
+.step-capstone .career-step-card:hover,
+.step-certificate .career-step-card:hover {
+  transform: translateY(-4px);
+  background: rgba(250, 247, 240, 0.65);
+  border-color: var(--primary);
+}
+
+.step-degree .career-step-card:hover,
+.step-packetworx .career-step-card:hover,
+.step-next .career-step-card:hover {
+  transform: translateY(4px);
+  background: rgba(250, 247, 240, 0.65);
+  border-color: var(--primary);
+}
 
 @media (max-width: 900px) {
   .career-map-shell { min-height: 0; overflow: visible; background: transparent; border: 0; box-shadow: none; }
   .career-map-shell::before,
   .career-road { display: none; }
-  .career-steps { position: relative; display: grid; gap: 1rem; padding-left: 2rem; }
-  .career-steps::before { content: ""; position: absolute; top: 1rem; bottom: 1rem; left: 0.55rem; width: 1px; background: color-mix(in srgb, var(--primary) 55%, var(--border)); }
+  .career-steps { position: relative; display: grid; gap: 1.5rem; padding-left: 2.5rem; }
+  .career-steps::before { content: ""; position: absolute; top: 1rem; bottom: 1rem; left: 0.75rem; width: 2px; background: color-mix(in srgb, var(--primary) 55%, var(--border)); }
   .career-step,
   .step-reshall,
   .step-degree,
   .step-capstone,
   .step-packetworx,
   .step-certificate,
-  .step-next { position: relative; inset: auto; width: 100%; }
-  .career-step-line { display: none; }
+  .step-next { position: relative; left: auto; top: auto; right: auto; bottom: auto; width: 100%; height: auto; transform: none; }
+  .career-step-line { display: none !important; }
   .career-step-pin,
   .step-reshall .career-step-pin,
   .step-degree .career-step-pin,
   .step-capstone .career-step-pin,
   .step-packetworx .career-step-pin,
   .step-certificate .career-step-pin,
-  .step-next .career-step-pin { top: 1.25rem; left: -2rem; width: 2.9rem; height: 2.9rem; border-width: 5px; }
-  .career-step-card { min-height: 0; padding: 1.25rem 1.25rem 1.3rem; }
-  .career-step-card h3 { font-size: 1.35rem; }
-  .career-step-description { font-size: 0.88rem; }
+  .step-next .career-step-pin { position: absolute; left: -2.35rem; top: 1.25rem; width: 2.2rem; height: 2.2rem; border-width: 3px; transform: none; }
+  .career-step-card,
+  .step-reshall .career-step-card,
+  .step-degree .career-step-card,
+  .step-capstone .career-step-card,
+  .step-packetworx .career-step-card,
+  .step-certificate .career-step-card,
+  .step-next .career-step-card { position: relative; left: auto; right: auto; top: auto; bottom: auto; width: 100%; transform: none; background: rgba(250, 247, 240, 0.85); backdrop-filter: blur(8px); border: 1px solid color-mix(in srgb, var(--navy) 28%, var(--border)); box-shadow: 0 4px 12px rgba(53, 39, 23, 0.05); }
+  .step-reshall .career-step-card:hover,
+  .step-degree .career-step-card:hover,
+  .step-capstone .career-step-card:hover,
+  .step-packetworx .career-step-card:hover,
+  .step-certificate .career-step-card:hover,
+  .step-next .career-step-card:hover { transform: none; background: rgba(250, 247, 240, 0.95); }
 }
 
 .experience-header,
@@ -1387,7 +1428,7 @@ a.contact-info-value:hover { color: var(--primary); }
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-html.dark .form-input { background: rgba(255,255,255,0.03); }
+.form-input { background: transparent; }
 
 .form-input::placeholder { color: color-mix(in srgb, var(--muted) 70%, transparent); }
 .form-input:focus {
