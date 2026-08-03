@@ -76,7 +76,7 @@ export const ExperienceSection = () => (
                 <article className="career-step-card">
                   <p className="career-step-date">{step.date}</p>
                   <h3>{step.title}</h3>
-                  <p className="career-step-label"><span>0{index + 1}</span> <span className="label-text">{step.label}</span></p>
+                  <p className="career-step-label"><span>0{index + 1}</span>{step.label}</p>
                   <p className="career-step-description">{step.description}</p>
                 </article>
               </li>

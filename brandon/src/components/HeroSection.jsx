@@ -8,32 +8,24 @@ export const HeroSection = () => {
         <>
             <section id="hero" className="hero-section">
                 <div className="hero-container">
-                    <div className="hero-profile-sheet" aria-label="Professional profile highlights">
-                        <p className="profile-sheet-label">Professional Profile</p>
-                        <div className="profile-sheet-monogram" aria-hidden="true">BC</div>
-                        <p className="profile-sheet-summary">Technical support, systems testing, and web development.</p>
-                        <div className="profile-sheet-rule" />
-                        <dl className="profile-sheet-stats">
-                            <div>
-                                <dt>Experience</dt>
-                                <dd>Technical & Sales Intern</dd>
-                            </div>
-                            <div>
-                                <dt>Focus</dt>
-                                <dd>Support, QA, and Development</dd>
-                            </div>
-                            <div>
-                                <dt>Based in</dt>
-                                <dd>Camarines Sur, Philippines</dd>
-                            </div>
-                        </dl>
-                    </div>
-                    <div className="hero-text">
-                        <p className="hero-greeting">Hello I am</p>
+                        <div className="hero-text">
+                        {/* About summary integrated into the hero for a concise intro */}
+                        <p className="hero-greeting">Hello, I'm Brandon</p>
                         <h1 className="hero-title">
                             <span className="text-glow">Brandon Caritos</span>
                         </h1>
                         <p className="hero-role">IT Professional / Developer</p>
+
+                        <div className="hero-about-copy">
+                          <p>
+                            I’m an aspiring IT professional with hands-on experience in technical sales support, system testing, technical documentation, and web development. I enjoy turning real requirements into organized, dependable solutions.
+                          </p>
+                          <p style={{ marginTop: '0.75rem' }}>
+                            My work combines the practical side of IT — supporting hardware, reviewing systems, and coordinating information — with a growing interest in building thoughtful web experiences. I bring the ownership of an e-commerce operator and the curiosity of a lifelong learner to every project.
+                          </p>
+                          <a href="#about" className="hero-learnmore">Get to know my skills</a>
+                        </div>
+
                         <div className="hero-actions">
                             <a href="#contact" className="hero-btn hero-btn-secondary" aria-label="Contact me">Contact Me</a>
                             <button onClick={() => setIsModalOpen(true)} className="hero-btn hero-btn-primary" aria-label="View resume">
