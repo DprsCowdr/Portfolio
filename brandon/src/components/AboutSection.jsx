@@ -1,11 +1,18 @@
 export const AboutSection = () => {
-    const focusAreas = [
-        "Technical sales support",
-        "System testing & QA",
-        "Web development",
-        "Hardware troubleshooting",
-        "Project documentation",
-        "Networking basics"
+    const technicalSkills = [
+        "E-commerce operations & platform management",
+        "Pre-sales demos & proof-of-concept builds",
+        "Web development (React, Node.js, PHP)",
+        "Integration scripting and connectors",
+        "Testing, QA and UAT support"
+    ];
+
+    const professionalSkills = [
+        "Client-facing communication & demos",
+        "Requirements capture and scoping",
+        "Cross-team coordination (sales, engineering, ops)",
+        "Prioritization and pragmatic decision-making",
+        "Technical documentation and handoffs"
     ];
 
     return (
@@ -13,27 +20,35 @@ export const AboutSection = () => {
             <div className="about-container">
                 <div className="about-grid">
                     <div className="about-intro-block">
-                        <p className="about-subtitle">Get to know me</p>
                         <h2 className="about-main-title">
-                            <span className="text-glow">About Me</span>
+                            <span className="text-glow">What I Bring</span>
                         </h2>
-                        <p className="about-intro-text">
-                            I’m an aspiring IT professional with hands-on experience in technical sales support, system testing, technical documentation, and web development. I enjoy turning real requirements into organized, dependable solutions.
-                        </p>
-                        <p className="about-intro-text about-intro-text-secondary">
-                            My work combines the practical side of IT - supporting hardware, reviewing systems, and coordinating information - with a growing interest in building thoughtful web experiences. I bring the ownership of an e-commerce operator and the curiosity of a lifelong learner to every project.
-                        </p>
                     </div>
 
                     <div className="about-focus-card">
-                        <p className="about-focus-label">What I Bring</p>
-                        <h3 className="about-focus-title">Practical support with a builder's mindset.</h3>
-                        <div className="about-focus-list">
-                            {focusAreas.map((area, index) => (
-                                <span key={area} className="about-focus-item">
-                                    <span aria-hidden="true">0{index + 1}</span>{area}
-                                </span>
-                            ))}
+                        <h3 className="about-focus-title">Technical sales & delivery</h3>
+                        <p className="about-focus-lead">I support sales by removing technical uncertainty early: building demos and quick prototypes, validating customer environments, running feasibility checks, and delivering clear technical scopes and handoff documentation. I pair client-facing pre-sales delivery with hands-on technical work so proposed solutions are both sale-ready and implementable.</p>
+
+                        <div className="about-focus-list skills-grid">
+                            <div className="skills-column">
+                                <h4 className="skills-column-title">Technical skills</h4>
+                                {technicalSkills.map((s, i) => (
+                                    <div key={s} className="about-focus-item">
+                                        <span aria-hidden="true">{i + 1}.</span>
+                                        <span className="focus-text">{s}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="skills-column">
+                                <h4 className="skills-column-title">Delivery & professional skills</h4>
+                                {professionalSkills.map((s, i) => (
+                                    <div key={s} className="about-focus-item">
+                                        <span aria-hidden="true">{i + 1}.</span>
+                                        <span className="focus-text">{s}</span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
