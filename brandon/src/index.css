@@ -979,9 +979,9 @@ a { color: inherit; text-decoration: none; }
   background: var(--navy);
 }
 
-.step-reshall { left: 8.0%; top: 20%; }
-.step-reshall .career-step-card { top: 5.5rem; left: -2rem; }
-.step-reshall .career-step-line { top: 0; height: 5.5rem; }
+.step-reshall { left: 8.0%; top: 18%; }
+.step-reshall .career-step-card { bottom: 6.5rem; left: -2rem; }
+.step-reshall .career-step-line { bottom: 0; height: 8rem; }
 
 .step-degree { left: 22.667%; top: 43.881%; }
 .step-degree .career-step-card { top: 5.5rem; }
