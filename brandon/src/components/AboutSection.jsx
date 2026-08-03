@@ -31,28 +31,25 @@ export const AboutSection = () => {
 <br></br>
 
 
-                        <div className="about-focus-list skills-grid aligned-grid">
-                            <div className="skills-column-header">
+                        <div className="about-focus-list skills-grid">
+                            <div className="skills-column">
                                 <h4 className="skills-column-title">Technical skills</h4>
+                                {technicalSkills.map((s, i) => (
+                                    <div key={s} className="about-focus-item">
+                                        <span aria-hidden="true" className="focus-num">{String(i + 1).padStart(2,'0')}</span>
+                                        <span className="focus-text">{s}</span>
+                                    </div>
+                                ))}
                             </div>
-                            <div className="skills-column-header">
+                            <div className="skills-column">
                                 <h4 className="skills-column-title">Soft skills</h4>
+                                {softSkills.map((s, i) => (
+                                    <div key={s} className="about-focus-item">
+                                        <span aria-hidden="true" className="focus-num">{String(i + 1).padStart(2,'0')}</span>
+                                        <span className="focus-text">{s}</span>
+                                    </div>
+                                ))}
                             </div>
-
-                            {technicalSkills.map((tech, i) => (
-                                // render row: left = tech, right = softSkills[i]
-                                <React.Fragment key={i}>
-                                    <div className="about-focus-item">
-                                        <span aria-hidden="true" className="focus-num">{String(i + 1).padStart(2,'0')}</span>
-                                        <span className="focus-text">{tech}</span>
-                                    </div>
-
-                                    <div className="about-focus-item">
-                                        <span aria-hidden="true" className="focus-num">{String(i + 1).padStart(2,'0')}</span>
-                                        <span className="focus-text">{softSkills[i]}</span>
-                                    </div>
-                                </React.Fragment>
-                            ))}
                         </div>
                     </div>
                 </div>
