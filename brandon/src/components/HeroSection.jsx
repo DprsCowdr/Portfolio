@@ -1,4 +1,5 @@
 import resumePDF from '../assets/Brandon_Resume.pdf';
+import heroImg from '../assets/ccc.png';
 import { useState } from 'react';
 
 export const HeroSection = () => {
@@ -14,15 +15,13 @@ export const HeroSection = () => {
                         <h1 className="hero-title">
                             <span className="text-glow">Brandon Caritos</span>
                         </h1>
-                        <p className="hero-role">IT Professional / Developer</p>
+                        <p className="hero-role">IT Developer / Technical Sales </p>
 
                         <div className="hero-about-copy">
                           <p>
                             I’m an aspiring IT professional with hands-on experience in technical sales support, system testing, technical documentation, and web development. I enjoy turning real requirements into organized, dependable solutions.
                           </p>
-                          <p style={{ marginTop: '0.75rem' }}>
-                            My work combines the practical side of IT — supporting hardware, reviewing systems, and coordinating information — with a growing interest in building thoughtful web experiences. I bring the ownership of an e-commerce operator and the curiosity of a lifelong learner to every project.
-                          </p>
+                          
                           <a href="#about" className="hero-learnmore">Get to know my skills</a>
                         </div>
 
@@ -32,6 +31,9 @@ export const HeroSection = () => {
                                 View Resume
                             </button>
                         </div>
+                    </div>
+                    <div className="hero-media">
+                      <img src={heroImg} alt="Brandon Caritos" className="hero-portrait" />
                     </div>
                 </div>
                 <div className="scroll-indicator">

@@ -27,7 +27,7 @@ export const AboutSection = () => {
 
                     <div className="about-focus-card">
                         <h3 className="about-focus-title">Technical sales & delivery</h3>
-                        <p className="about-lead">I'm an aspiring IT professional with a passion for technology, continuous learning, and building meaningful connections. I enjoy solving technical problems, creating simple solutions, and helping customers succeed by making complex ideas easy to understand while constantly growing both my technical and communication skills.</p>
+                        <p className="about-lead">I bridge technical solutions and customer needs with clear communication..</p>
 <br></br>
 
 

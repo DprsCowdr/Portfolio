@@ -453,6 +453,48 @@ a { color: inherit; text-decoration: none; }
 
 @media (min-width: 900px) {
   .hero-text { text-align: left; }
+
+  /* layout: text on the left, full-height hero image on the right */
+  .hero-container { display: flex; gap: 2rem; align-items: stretch; }
+  .hero-text { order: 1; flex: 1 1 55%; display: flex; flex-direction: column; justify-content: center; }
+  .hero-media { order: 2; flex: 0 0 45%; display: block; position: relative; }
+
+  /* Make the portrait fill the hero area and remove the boxed look */
+  .hero-portrait {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* show whole image without cropping */
+    object-position: center center;
+    background: transparent;
+    border-radius: 0; /* no rounded box */
+    border: 0; /* transparent */
+    box-shadow: none;
+    transform: none;
+    transition: transform 0.35s ease, filter 0.35s ease;
+    display: block;
+  }
+
+  /* Soft left gradient so the text remains readable on top of the image */
+  .hero-media::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+    background: linear-gradient(90deg, rgba(250,247,240,0.98) 0%, rgba(250,247,240,0.8) 35%, rgba(250,247,240,0.0) 100%);
+    pointer-events: none;
+  }
+
+  /* Slight hover lift of the image (subtle) */
+  .hero-media:hover .hero-portrait { transform: translateY(-3px) scale(1.01); }
+  .hero-media:hover::before { background: linear-gradient(90deg, rgba(250,247,240,0.95) 0%, rgba(250,247,240,0.65) 30%, rgba(250,247,240,0.0) 100%); }
+}
+
+@media (max-width: 899px) {
+  .hero-media { display: none; }
 }
 
 .hero-greeting,
@@ -946,7 +988,76 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 8px 32px rgba(53, 39, 23, 0.05);
   border-radius: 0.75rem;
   transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
 }
+
+.career-step-card:hover {
+  background: rgba(255, 255, 255, 0.30);
+}
+
+.career-step-slideshow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 0;
+}
+
+.career-step-slideshow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+.career-step-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: careerSlide 20s infinite paused;
+  animation-fill-mode: forwards;
+}
+
+.career-step-card:hover .career-step-slideshow {
+  opacity: 1;
+  visibility: visible;
+}
+
+.career-step-card:hover .career-step-slide {
+  animation-play-state: running;
+}
+
+@keyframes careerSlide {
+  0%, 25%, 100% { opacity: 0; }
+  5%, 20% { opacity: 1; }
+}
+
+.career-step-slideshow .career-step-slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.career-step-slideshow .career-step-slide:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.career-step-slideshow .career-step-slide:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.career-step-slideshow .career-step-slide:nth-child(4) {
+  animation-delay: 12s;
+}
+
+.career-step-slideshow .career-step-slide:nth-child(5) {
+  animation-delay: 16s;
+}
+
 
 .career-step-date {
   margin: 0 0 0.8rem 0;
@@ -1017,9 +1128,9 @@ a { color: inherit; text-decoration: none; }
   background: var(--navy);
 }
 
-.step-reshall { left: 8.0%; top: 53.5%; }
-.step-reshall .career-step-card { bottom: 5.5rem; left: -2rem; }
-.step-reshall .career-step-line { bottom: 0; height: 5.5rem; }
+.step-reshall { left: 8.0%; top: 52.0%; }
+.step-reshall .career-step-card { bottom: 7rem; left: -2rem; }
+.step-reshall .career-step-line { bottom: 0; height: 7rem; }
 
 .step-degree { left: 22.667%; top: 43.881%; }
 .step-degree .career-step-card { top: 5.5rem; }
