@@ -145,11 +145,6 @@ a { color: inherit; text-decoration: none; }
 .about-focus-lead { font-size: 1.125rem; line-height: 1.6; font-weight: 600; color: #000; }
 .skills-column-title { font-weight: 700; margin-bottom: 0.6rem; color: #000; }
 
-/* add extra space before technical skills header */
-.skills-column:first-child { padding-top: 1.2rem; }
-.about-focus-item { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.6rem; }
-.focus-num { display: inline-block; width: 2.2rem; text-align: right; color: var(--primary); font-weight: 700; margin-right: 0.6rem; }
-.about-focus-item .focus-text { display: block; color: #000; font-size: 1rem; }
 
 .site-nav {
   position: fixed;
@@ -716,6 +711,7 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  align-items: start;
 }
 
 @media (max-width: 1023px) {
@@ -723,8 +719,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 .about-focus-item {
-  display: flex;
-  align-items: center; /* center numbers and text vertically */
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  align-items: start;
   gap: 0.75rem;
   padding: 0.6rem 0;
   border-bottom: 1px dashed color-mix(in srgb, var(--navy) 12%, transparent);
@@ -738,11 +735,12 @@ a { color: inherit; text-decoration: none; }
 
 /* Number column styling (override generic span rule) */
 .about-focus-item .focus-num {
+  justify-self: end;
   color: var(--primary);
   font-family: 'DM Mono', monospace;
   font-size: 0.78rem;
-  margin-top: 0;
-  align-self: center;
+  margin: 0;
+  align-self: start;
 }
 
 /* Main text of each skill */
