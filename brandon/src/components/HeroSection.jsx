@@ -11,7 +11,7 @@ export const HeroSection = () => {
                 <div className="hero-container">
                         <div className="hero-text">
                         {/* About summary integrated into the hero for a concise intro */}
-                        <p className="hero-greeting">Hello, I'm Brandon</p>
+                        <p className="hero-greeting">Hello, I'm </p>
                         <h1 className="hero-title">
                             <span className="text-glow">Brandon Caritos</span>
                         </h1>
